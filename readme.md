@@ -17,7 +17,7 @@ Instead of running jobs directly, this template writes a job file, then dispatch
 - The parallel jobs are detached from the notebook, so should persist until completed, even at notebook close/disconnect.
 - Tested in Julia v1.8.5, IJulia v1.24.0, Luna v0.2.0. 
 - Additional notes in notebook.
-- For Docker builds, see https://github.com/phockett/open-photoionization-docker-stacks/tree/main/luna
+- For Docker builds, see [Open Photoionization Docker Stacks](https://github.com/phockett/open-photoionization-docker-stacks/tree/main/luna).
 
 
 **Instructions**
