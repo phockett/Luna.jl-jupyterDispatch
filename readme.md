@@ -5,7 +5,7 @@ For running [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in paralle
 
 **What and why**
 
-Jupyter is great, and I like to do everything in/from a notebook... but dispatching [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in parallel](http://lupo-lab.com/Luna.jl/stable/scans.html#Parameter-scans) from a notebook was buggy and inconsistent when I tried it. 
+Jupyter is great, and I like to do everything in/from a notebook... but dispatching [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in parallel](http://lupo-lab.com/Luna.jl/stable/scans.html#Parameter-scans) from a notebook was buggy and inconsistent when I tried it. UPDATE: it seems that the issue is due to the way IJulia wraps system calls, for more discussion see [Luna.jl #317](https://github.com/LupoLab/Luna.jl/issues/317).
 
 Instead of running jobs directly, this template writes a job file, then dispatches that to a parallel Julia pool via a shell script. Each set of results is put in a separate dir, along with output figures, for later inspection.
 
