@@ -5,7 +5,7 @@ For running [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in paralle
 
 **What and why**
 
-Jupyter is great, and I like to do everything in/from a notebook... but dispatching [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in parallel](http://lupo-lab.com/Luna.jl/stable/scans.html#Parameter-scans) from a notebook was buggy and inconsistent when I tried it. 
+Jupyter is great, and I like to do everything in/from a notebook... but dispatching [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in parallel](http://lupo-lab.com/Luna.jl/stable/scans.html#Parameter-scans) from a notebook was buggy and inconsistent when I tried it. (UPDATE: it seems that the issue is due to the way IJulia wraps system calls, for more discussion see [Luna.jl #317](https://github.com/LupoLab/Luna.jl/issues/317).)
 
 Instead of running jobs directly, this template writes a job file, then dispatches that to a parallel Julia pool via a shell script. Each set of results is put in a separate dir, along with output figures, for later inspection.
 
@@ -17,6 +17,7 @@ Instead of running jobs directly, this template writes a job file, then dispatch
 - The parallel jobs are detached from the notebook, so should persist until completed, even at notebook close/disconnect.
 - Tested in Julia v1.8.5, IJulia v1.24.0, Luna v0.2.0. 
 - Additional notes in notebook.
+- For Docker builds, see [Open Photoionization Docker Stacks](https://github.com/phockett/open-photoionization-docker-stacks/tree/main/luna).
 
 
 **Instructions**
