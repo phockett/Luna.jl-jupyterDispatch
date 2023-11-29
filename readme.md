@@ -3,6 +3,13 @@
 For running [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in parallel](http://lupo-lab.com/Luna.jl/stable/scans.html#Parameter-scans) from [Jupyter/IJulia notebooks](https://julialang.github.io/IJulia.jl/stable/).
 
 
+**UPDATE NOV 2023**
+
+The issue with running Luna scans directly from Jupyter/IJulia can be fixed with the workaround from https://github.com/LupoLab/Luna.jl/issues/317 - see the demo notebook [demo/luna_scan_demo_271123.ipynb](https://github.com/phockett/Luna.jl-jupyterDispatch/blob/main/demo/luna_scan_demo_271123.ipynb) for a basic working example.
+
+
+---
+
 **What and why**
 
 Jupyter is great, and I like to do everything in/from a notebook... but dispatching [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in parallel](http://lupo-lab.com/Luna.jl/stable/scans.html#Parameter-scans) from a notebook was buggy and inconsistent when I tried it. (UPDATE: it seems that the issue is due to the way IJulia wraps system calls, for more discussion see [Luna.jl #317](https://github.com/LupoLab/Luna.jl/issues/317).)
