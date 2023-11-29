@@ -7,6 +7,15 @@ For running [Luna.jl](https://github.com/LupoLab/Luna.jl) jobs/[scans in paralle
 
 The issue with running Luna scans directly from Jupyter/IJulia can be fixed with the workaround from https://github.com/LupoLab/Luna.jl/issues/317 - see the demo notebook [demo/luna_scan_demo_271123.ipynb](https://github.com/phockett/Luna.jl-jupyterDispatch/blob/main/demo/luna_scan_demo_271123.ipynb) for a basic working example.
 
+In general, the solution should just need the following prior to `scan` creation:
+
+```julia
+# Clear ARGS if running in Jupyter/IJulia
+if isdefined(Main, :IJulia) && Main.IJulia.inited
+    [pop!(ARGS) for _ in eachindex(ARGS)]
+end
+```
+
 
 ---
 
